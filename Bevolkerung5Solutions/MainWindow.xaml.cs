@@ -6,18 +6,17 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-//Bevíz László
-//Erdős Barnabás
-//Bobák Kornél
-//Dombóvári Máté
-//Marcalek Máté
+//_1 Bevíz László
+//_2 Erdős Barnabás
+//_3 Bobák Kornél
+//_4 Dombóvári Máté
+//_5 Marcalek Máté
 
 
 namespace Bevolkerung5Solutions;
 public partial class MainWindow : Window
 {
     List<Allampolgar> lakossag = [];
-    List<Action> feladatok = [];
     const int feladatSzam = 45;
     System.Globalization.CultureInfo german = System.Globalization.CultureInfo.GetCultureInfo("de-DE");
     Random rnd = new Random();
@@ -28,7 +27,12 @@ public partial class MainWindow : Window
         InitializeComponent();
         AdatokFeltoltese();
         DataContext = lakossag;
+        MegoldasTeljes.Loaded += (s, e) => DataGridMagassagBeallitas();
+    }
 
+    private void DataGridMagassagBeallitas()
+    {
+        MegoldasTeljes.Height = MegoldasTeljes.ColumnHeaderHeight + MegoldasTeljes.RowHeight * 15;
     }
 
     private void AdatokFeltoltese()

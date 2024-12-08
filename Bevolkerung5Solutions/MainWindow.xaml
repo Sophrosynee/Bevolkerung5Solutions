@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bevolkerung5Solutions"
         mc:Ignorable="d"
-        Title="Németország anonimizált lakossági adatai" Height="750" Width="1300" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Németország anonimizált lakossági adatai" Height="945" Width="1300" WindowStartupLocation="CenterScreen" >
     <Grid Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="1.5*" />
             <RowDefinition Height="5*" />
             <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
@@ -38,15 +38,24 @@
                     <ComboBox x:Name="FeladatokCombo4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" Height="29" SelectionChanged="FeladatokCombo_SelectionChanged" Margin="5,5,5,5" Loaded="ComboFeltoltese" Tag="5" />
                 </StackPanel>
             </WrapPanel>
-            <Label Content="feladat egy mondatos megoldása:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="46" Margin="325,57,0,0" />
-            <Label x:Name="MegoldasMondatos" d:Content="megoldás" Margin="581,57,361,18"/>
+            <Label Content="feladat egy mondatos megoldása:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="36" Margin="325,50,0,0" />
+            <Label x:Name="MegoldasMondatos" d:Content="megoldás" Margin="563,50,379,35"/>
         </Grid>
-
-        <DataGrid Grid.Row="1" x:Name="MegoldasTeljes" FontSize="12" Width="auto" AutoGenerateColumns="False" ItemsSource="{Binding}">
+        <Label Content="Megoldásként leszűrt sorok:"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="41" Margin="0,5,0,0" Width="197" Grid.Row="1"/>
+        <!--<DataGrid Grid.Row="1" x:Name="MegoldasTeljes" FontSize="12" Width="auto" AutoGenerateColumns="False" ItemsSource="{Binding}"  Margin="0,51,0,4">
+             HorizontalAlignment="Stretch" width auto helyett -->
+        <DataGrid Grid.Row="1" x:Name="MegoldasTeljes" 
+          FontSize="12" 
+          VerticalAlignment="Top"
+                  ColumnHeaderHeight="30"
+          RowHeight="20"
+          AutoGenerateColumns="False" 
+          ItemsSource="{Binding}"  
+          Margin="0,46,20,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Nem" Binding="{Binding Nem}" />
-                <DataGridTextColumn Header="Születési év" Binding="{Binding SzultetesiEv}" />
+                <DataGridTextColumn Header="Születési év" Binding="{Binding SzuletesiEv}" />
                 <DataGridTextColumn Header="Súly" Binding="{Binding Suly}" />
                 <DataGridTextColumn Header="Magasság" Binding="{Binding Magassag}" />
                 <DataGridTextColumn Header="Dohányzik" Binding="{Binding DohanyzikSzoveges}" />
@@ -54,16 +63,14 @@
                 <DataGridTextColumn Header="Népcsoport" Binding="{Binding Nepcsoport}" />
                 <DataGridTextColumn Header="Tartomány" Binding="{Binding Tartomany}" Width="*"/>
                 <DataGridTextColumn Header="Nettó jövedelem" Binding="{Binding NettoJovedelem}" />
-                <DataGridTextColumn Header="Iskolai végzetség" Binding="{Binding IskolaiVegzettseg}" />
+                <DataGridTextColumn Header="Iskolai végzettség" Binding="{Binding IskolaiVegzettseg}" />
                 <DataGridTextColumn Header="Politikai nézet" Binding="{Binding PolitikaiNezet}" />
                 <DataGridTextColumn Header="Aktív szavazó" Binding="{Binding AktivSzavazoSzoveges}" />
                 <DataGridTextColumn Header="Sörfogyasztás évente" Binding="{Binding SorFogyasztasEventeSzoveges}" />
                 <DataGridTextColumn Header="Krumplifogyasztás évente" Binding="{Binding KrumpliFogyasztasEventeSzoveges}" />
             </DataGrid.Columns>
         </DataGrid>
-        <ListBox Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" x:Name="MegoldasLista" FontSize="12"/>
-
+        <ListBox Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" x:Name="MegoldasLista" FontSize="12" Margin="0,55,699,22"/>
+        <Label Content="Listás megoldás"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="35" Margin="0,10,0,0" Width="197" Grid.Row="2"/>
     </Grid>
-
-
 </Window>
