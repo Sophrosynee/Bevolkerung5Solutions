@@ -42,8 +42,6 @@
             <Label x:Name="MegoldasMondatos" d:Content="megoldás" Margin="563,50,379,35"/>
         </Grid>
         <Label Content="Megoldásként leszűrt sorok:"  HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="41" Margin="0,5,0,0" Width="197" Grid.Row="1"/>
-        <!--<DataGrid Grid.Row="1" x:Name="MegoldasTeljes" FontSize="12" Width="auto" AutoGenerateColumns="False" ItemsSource="{Binding}"  Margin="0,51,0,4">
-             HorizontalAlignment="Stretch" width auto helyett -->
         <DataGrid Grid.Row="1" x:Name="MegoldasTeljes" 
           FontSize="12" 
           VerticalAlignment="Top"
